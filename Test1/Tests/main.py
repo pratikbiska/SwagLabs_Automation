@@ -57,13 +57,18 @@ login_page.click_login()
 # Product
 time.sleep(2)
 product_page.click_filter()
+time.sleep(2)
 product_page.select_filter(sort_by[2])
 time.sleep(2)
-product_page.select_product()
+product_page.select_product_onesie()
 time.sleep(2)
+product_page.select_product_bike_light()
+time.sleep(3)
 
-# Checkout
+# Checkout: Your Cart
 cart_page.click_cart()
+time.sleep(2)
+cart_page.remove_item_bike_light()
 time.sleep(2)
 cart_page.click_checkout()
 time.sleep(2)

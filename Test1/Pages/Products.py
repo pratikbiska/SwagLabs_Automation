@@ -9,6 +9,8 @@ class Product:
         self.driver = driver
         self.filter = (By.CSS_SELECTOR, 'select[class="product_sort_container"]')
         self.onesie = (By.CSS_SELECTOR, 'button[id="add-to-cart-sauce-labs-onesie"]')
+        self.bike_light = (By.CSS_SELECTOR, 'button[id="add-to-cart-sauce-labs-bike-light"]')
+
 
     def click_filter(self):
         WebDriverWait(self.driver, 10).until(
@@ -23,8 +25,14 @@ class Product:
         select = Select(self.driver.find_element(*self.filter))
         select.select_by_value(filter_by)
 
-    def select_product(self):
+    def select_product_onesie(self):
         WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable(self.onesie)
         )
         self.driver.find_element(*self.onesie).click()
+
+    def select_product_bike_light(self):
+        WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable(self.bike_light)
+        )
+        self.driver.find_element(*self.bike_light).click()
