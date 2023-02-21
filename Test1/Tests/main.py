@@ -1,3 +1,4 @@
+# Happy flow to Login->Add to Cart->Checkout->Logout
 from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
 from Test1.Pages.Login import UserLogin
